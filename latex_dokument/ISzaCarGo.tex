@@ -1,8 +1,14 @@
 \documentclass{article}
 
-\usepackage[top= 27mm, bottom=27mm, left=25mm, right=25mm]{geometry}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage{booktabs,hhline}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\graphicspath{ {./slike/} }
 
 \renewcommand{\figurename}{Slika}
 \renewcommand{\contentsname}{Sadr\v{z}aj}
@@ -31,7 +37,7 @@
 \large
 \emph{Autori:}\\
 \textup Luka Banduka\\
-\textup Filip Javo\v sevi\' c\\
+\textup Filip Jova\v sevi\' c\\
 \textup Igor Mandi\' c\\
 \textup Nenad Peri\v si\' c\\
 \textup Stefan Lazovi\' c\\
@@ -59,8 +65,39 @@
 \newpage
 \section{\bfseries Uvod}
 
-\subsection{\bfseries Analiza sistema}
 
+\subsection{\bfseries Analiza sistema}
+     
 \subsection{\bfseries Dijagram konteksta celog sistema}
+
+\quad Na slici \ref{fig:contextDiagram} prikazani su dijagram konteksta i akteri, a na slici \ref{fig:dtp1} je dat DTP dijagram nivoa jedan.
+\paragraph{Registrovanje korisnika:}
+    Da bi korisnik mogao da se prijavi prvo biti registrovan. Registraciju obavlja sam i dobija odgovor na kraju da li je uspe\v sno registrovan ili ne.
+\paragraph{Login korisnika:}
+    Da bi korisnik mogao da zatra\v zi vo\v znju mora biti prijavljen. On to radi samostalno i kao odgovor dobija da li se uspe\v sno prijavio.
+\paragraph{Rad sa voza\v cima:}
+    Uslov da bi voza\v c mogao da vozi korisnike je da on bude registrovan. Proces registracije obavlja uspomo\' c HR slu\v zbe. Tako\dj e voza\v c, ukoliko nije pogodan, mo\v ze biti obrisan iz sistema i samim tim mu biti zabranjeno da dalje prevozi korisnike. Taj posao obavlja HR. Ukoliko novoregistrovani voza\v c nema svoje vozilo HR pravi zahtev \v sefu voznog parka i daje na kori\v scenje voza\v cu.
+\paragraph{Login voza\v ca:}
+    Kako bi mogao da prevozi korisnike, voza\v c prvo mora da se prijavi. On to radi samostalno i kao odgovor dobija da li se uspe\v sno prijavio.
+\paragraph{Vo\v znja:}
+    Korisnik napravi zahtev za vo\v znju, slobodan voza\v c prihvati. Voza\v c do\dj e na dogovorenu lokaciju i preveze korisnika na \v zeljeno mesto. Korisnik na jedan od dva ponu\dj ena na\v cina plati vo\v znju i opciono oceni voza\v ca.
+\paragraph{Nabavka vozila:}
+    U sistemu postoje dve vrste voza\v ca. Voza\v ci koji imaju svoj automobil i oni koji dobijaju automobil na kori\v s\' cenje prilikom registracije. Da se ne bi desilo da nema slobodnih automobila za novoregistrovanog voza\v ca, \v sef voznog parka obavlja nabavku novih automobila.
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\textwidth]{CarGoContextDiagram.png}
+\end{center}
+	\caption{Dijagram konteksta celog infomacionog sistema.}
+\label{fig:contextDiagram}
+\end{figure}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\textwidth]{ISzaCarGo.png}
+\end{center}
+    \caption{DTP dijagram sistema nivoa 1.}
+\label{fig:dtp1}
+\end{figure}
 
 \end{document}
