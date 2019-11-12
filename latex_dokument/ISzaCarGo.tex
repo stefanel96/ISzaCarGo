@@ -1,12 +1,13 @@
 \documentclass{article}
 
-\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[top= 27mm, bottom=27mm, left=25mm, right=25mm]{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[unicode]{hyperref}
 \usepackage{float}
 \usepackage{booktabs,hhline}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage[english,serbian]{babel}
 \usepackage[T1]{fontenc}
 \graphicspath{ {./slike/} }
 
@@ -66,7 +67,9 @@
 \section{\bfseries Uvod}
 
 
-\subsection{\bfseries Analiza sistema}
+\section{\bfseries Analiza sistema}
+
+OVDE CODA PISE
      
 \subsection{\bfseries Dijagram konteksta celog sistema}
 
@@ -84,20 +87,44 @@
 \paragraph{Nabavka vozila:}
     U sistemu postoje dve vrste voza\v ca. Voza\v ci koji imaju svoj automobil i oni koji dobijaju automobil na kori\v s\' cenje prilikom registracije. Da se ne bi desilo da nema slobodnih automobila za novoregistrovanog voza\v ca, \v sef voznog parka obavlja nabavku novih automobila.
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{CarGoContextDiagram.png}
 \end{center}
-	\caption{Dijagram konteksta celog infomacionog sistema.}
+    \caption{Dijagram konteksta celog infomacionog sistema.}
 \label{fig:contextDiagram}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{ISzaCarGo.png}
 \end{center}
     \caption{DTP dijagram sistema nivoa 1.}
 \label{fig:dtp1}
 \end{figure}
+
+\subsection{\bfseries Akteri}
+
+OVDE AKTERI
+
+\section{\bfseries Slu\v cajevi upotrebe}
+
+\subsection{\bfseries Registrovanje korisnika}
+\subsection{\bfseries Login korisnika}
+\subsection{\bfseries Rad sa voza\v cima}
+\subsubsection{\bfseries Registrovanje voza\v ca}
+\subsubsection{\bfseries Zahtev za automobil}
+\subsubsection{\bfseries Otpu\v stanje voza\v ca}
+\subsection{\bfseries Login voza\v ca}
+\subsection{\bfseries Vo\v znja}
+\subsubsection{\bfseries Naru\v civanje vo\v znje}
+\subsubsection{\bfseries Prihvatanje vo\v znje}
+\subsubsection{\bfseries Prevoz putnika}
+\subsubsection{\bfseries Ocenjivanje voza\v ca}
+\subsubsection{\bfseries Naplata vo\v znje}
+\subsection{\bfseries Nabavka vozila}
+\subsubsection{\bfseries Kreiranje narud\v zbine vozila}
+\subsubsection{\bfseries Upravljanje podacima o dobavlja\v cima}
+\subsubsection{\bfseries Prijem pristiglih vozila}
 
 \end{document}
