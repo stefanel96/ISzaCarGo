@@ -7,13 +7,72 @@
 \subsubsection{\bfseries Zahtev za automobil}
 \subsubsection{\bfseries Otpu\v stanje voza\v ca}
 \subsection{\bfseries Login voza\v ca}
-\subsection{\bfseries Vo\v znja}
-\subsubsection{\bfseries Naru\v civanje vo\v znje}
-\subsubsection{\bfseries Prihvatanje vo\v znje}
-\subsubsection{\bfseries Prevoz putnika}
-\subsubsection{\bfseries Ocenjivanje voza\v ca}
-\subsubsection{\bfseries Naplata vo\v znje}
 
+\subsection{\bfseries Vo\v znja}
+
+\subsubsection{\bfseries Naru\v civanje vo\v znje}
+\noindent Slučaj upotrebe: Naručivanje vožnje\\
+1. Kratak opis:
+\par -Korisnik naručuje vožnju radi transporta sa jednog odredišta na drugo. \\
+2.  Učesnici:  
+\par - Korisnik
+\par - Vozač \\
+3. Preduslovi: 
+\par - Korisnik mora na svom telefonu posedovati aplikaciju.
+\par - Korisnik mora imati dovoljno novca na računu da bi mogao da plati vožnju. \\
+4. Postuslovi:
+\par - Mora postojati slobodan vozač koji će moći da izvrši transport od jedne lokacije do druge.\\
+5. Osnovni tok:
+\par 1. Korisnik se registruje
+\par 2.  Definise putem svoje aplikacije početnu lokaciju
+\par 3. Definiše lokaciju na koju želi da bude transportovan.
+\par 4. Zahtev se šalje serveru
+\par 5. Server šalje zahtev vozačima
+\par 6. Vozači koji žele i u mogućnosti su da prime vožnju to i čine
+\par 7. Korisnik bira  nekog od ponuđenih vozača u zavisnosti od nekoliko parametara(ocena vozača, udaljenost od trenutne lokacije) ukoliko mu cena odgovara.
+\par 8. Korisnik čeka odabranog vozača na definisanoj lokaciji u cilju transporta. \\
+
+\noindent 6. Alternativni tok:
+\par 7: Ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika:
+\par - Korisnik se obaveštava da trenutno ne postoji slobodno vozilo i ukoliko to korisnik želi, stavlja se na listu čekanja dok se ne oslobodi neko vozilo.
+
+\subsubsection{\bfseries Prihvatanje vo\v znje}
+\noindent Slucaj upotrebe: Prihvatanje vožnje \\
+1. Kratak opis:
+\par Vozač prihvata ili odbija zahtev za prevoz korisnika. \\
+2.  Učesnici:  
+\par - Vozač \\
+3. Preduslovi: 
+\par - Zahtev za prevoz poslat od strane korisnika \\
+4. Postuslovi:
+\par - Vozač je prihvatio vožnju ukoliko je to želeo \\
+5. Osnovni tok:
+\par 1. Korisnik šalje zahtev za prevoz
+\par 2.  Zahtev preko servera stiže do vozača
+\par 3.  Vozač prihvata ili odbija korisnički zahtev \\
+
+\subsubsection{\bfseries Prevoz putnika}
+%in progress
+\subsubsection{\bfseries Ocenjivanje voza\v ca}
+\noindent Slucaj upotrebe: Ocenjivanje vozača \\
+1. Kratak opis: 
+\par Korisnik ocenjuje vozača na osnovu utisaka koji je isti na njega ostavio tokom vožnje. \\
+2.  Učesnici:  
+\par - Korisnik \\
+3. Preduslovi: 
+\par - Korisnik prevežen od jedne lokacije do druge. \\
+4. Postuslovi:
+\par - Vozač je ocenjen ukoliko je korisnik izabrao tu opciju \\
+5. Osnovni tok:
+\par 1. Korisnik je prevežen sa jedne lokacije na drugu
+\par 2.  Korisnik bira da li hoće da oceni vozača
+\par 3.  Korisnik vrši ocenjivanje vozača ocenom od 1 do 5 \\
+
+\noindent 6. Alternativni tok:
+\par 2: Ukoliko je korisnik odabrao opciju da ne želi da oceni vozača korak 3 se preskače.
+
+\subsubsection{\bfseries Naplata vo\v znje}
+%in progress
 \newpage
 
 \subsection{\bfseries Nabavka vozila}
