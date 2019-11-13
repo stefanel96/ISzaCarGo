@@ -2,11 +2,116 @@
 
 \subsection{\bfseries Registrovanje korisnika}
 \subsection{\bfseries Login korisnika}
-\subsection{\bfseries Rad sa voza\v cima}
-\subsubsection{\bfseries Registrovanje voza\v ca}
+
+
+\subsection{\bfseries Rad sa vozačima}
+\subsubsection{\bfseries Registrovanje vozača}
+
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Korisnik pristupa veb stranici i prijavljuje se za pružanje usluga na putu
+		\end{itemize}
+ 
+	\item Ucesnici:
+		\begin{itemize}
+			\item Zainteresovana osoba koja želi da postane deo CarGo zajendice		
+		\end{itemize}				
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Prijavljeni mora da ima vozačku dozvolu
+		    \item Bar 5 godina iskustva u vožnji
+		    \item Napredno poznavanje grada
+		    \item Auto koji nije stariji od 10 godina
+		    \item Pametan telefon
+		    \item Da nije osuđivan
+		    \item Uspešno položen test ličnosti
+		\end{itemize}
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Korisnik je registrovan kao vozač
+		\end{itemize}		
+
+
+	\item Glavni tok:
+		\begin{itemize}
+		    \item Korisnik odlazi na veb stranicu i nalazi formu za prijavu
+		    \item Korisnik popunjava prijavu
+		    \item Na mejl stize potvrda o uspešnosti prijavljivanja i termin dolaska na razgovor sa HR
+		    \item Potencijalni vozač donosi na razgovor potrebnu dokumentaciju i radi test
+		    \item HR odlučuje da li je vozač kompetentan za tu poziciju i ukoliko jeste sistem beleži novog vozača u bazu
+		\end{itemize}
+
+	\item Alternativni tok:
+		\begin{itemize}
+    			\item Korisnik nije uneo ispravne podatke za prijavu. Slučaj upotrebe se nastavlja na drugom koraku glavnog toka
+		    \item Korisnik nije doneo potrebnu dokumentaciju na razgovor. U tom slučaju korisnik dobija novi termin za razgovor
+		\end{itemize}
+
+
+	\item Dodatne informacije:
+		\begin{itemize}
+			\item Neophodni podaci za prijavu vozača su ime i prezime, validna e-mail adresa, broj telefona, godina registracije, marka i tip vozila pod uslovom da ima vozilo i za koji grad se prijavljuje
+		\end{itemize}						
+
+
+\end{itemize}
+
+
 \subsubsection{\bfseries Zahtev za automobil}
-\subsubsection{\bfseries Otpu\v stanje voza\v ca}
-\subsection{\bfseries Login voza\v ca}
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Korisnicima koji nemaju sopstveni automobil potrebno je obezbediti prevozno sredstvo		
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item HR
+		    \item Šef voznog parka
+		    \item Vozač
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Vozač je registrovan
+		    \item U prijavi je označeno da je potrebno vozilo
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Vozač dobija vozilo
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{itemize}
+		    \item Ukoliko vozač nema vozilo HR salje zahtev šefu voznog parka
+		    \item Šef voznog parka proverava da li ima slobodnih vozila
+		    \item Ukoliko ima dodeljuje vozilo vozaču
+		\end{itemize}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item Ukoliko nema, vozač se stavlja na čekanje i prelazi se na slucaj upotrebe nabavke vozila
+		\end{itemize}
+
+	\item Dodatne informacije:
+		\begin{itemize}
+			\item Na osnovu prijave koju je dostavio vozač HR zna da li on ima svoje vozilo ili je zatražio njihovo
+		\end{itemize}
+
+\end{itemize}
+
+
+\subsubsection{\bfseries Otpuštanje vozača}
+%TODO
+
+
+\subsection{\bfseries Login vozača}
 
 \subsection{\bfseries Vo\v znja}
 
