@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[top= 27mm, bottom=27mm, left=25mm, right=25mm]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage[english, serbian]{babel}
+
+\usepackage{float}
+\usepackage{booktabs,hhline}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[T1]{fontenc}
+
+
+\pagenumbering{arabic}
+
+\usepackage{graphicx}
+\graphicspath{ {./Slike/} }
+
+\usepackage[unicode]{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linktoc = all,    
+    linkcolor = blue,
+}
+
+\renewcommand{\contentsname}{Sadržaj}
+\renewcommand{\figurename}{Slika}
+
+\begin{document}
+
+\input{Sekcije/0_naslovna.tex}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\input{Sekcije/1_uvod.tex}
+\input{Sekcije/2_analiza_sistema.tex}
+\input{Sekcije/3_slucajevi_upotrebe.tex}
+\newpage
+
+
+\end{document}
