@@ -305,72 +305,133 @@
 \subsection{\bfseries Nabavka vozila}
 
 \subsubsection{\bfseries Kreiranje narudžbine vozila}
-\noindent Slučaj upotrebe: Kreiranje narudžbine vozila:\\
-1. Kratak opis:
-\par -Šef voznog parka sastavlja porudžbinu o broju vozila pomoću informacije o vozačima kojima su potrebna vozila, a koju će kasnije proslediti dobavljaču vozila.\\
-2. Učesnici:
-\par -Šef voznog parka
-\par -HR tim\\
-3. Preduslovi:
-\par -Postoje vozači kojima su potrebna vozila.\\
-4. Postuslovi:
-\par -Porudžbina je sastavljena i spremna da bude poslata.\\
-5. Osnovni tok:
-\par 1. HR tim šalje dopis šefu voznog parka na nedeljnom nivou koliko novih vozača nema svoje vozilo.
-\par 2. Šef voznog parka proverava da li ima 10 ili više vozača kojima je potrebno vozilo ili postoji barem jedan vozač koji čeka na vozilo više od dve nedelje.
-\par 3. Šef voznog parka sastavlja porudžbinu.\\
 
-\noindent 6. Alternativni tok:
-\par 2: Ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje.
-\par -Šef voznog parka čeka sledeći dopis od HR tima i kreće ponovo od koraka 2.
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Šef voznog parka sastavlja porudžbinu o broju vozila pomoću informacije o vozačima kojima su potrebna vozila, a koju će kasnije proslediti dobavljaču vozila.		
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item Šef voznog parka
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Postoje vozači kojima su potrebna vozila.
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Porudžbina je sastavljena i spremna da bude poslata.
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{enumerate}
+		    \item Šef voznog parka na nedeljnom nivou proverava bazu podataka o vozačima da bi video koliko novih vozača nema svoje vozilo.
+		    \item Šef voznog parka proverava da li ima 10 ili više vozača kojima je potrebno vozilo ili postoji barem jedan vozač koji čeka na vozilo više od dve nedelje.
+		    \item Šef voznog parka sastavlja porudžbinu.
+		\end{enumerate}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item 2: Ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje.
+			\item -Šef voznog parka čeka sledeću proveru baze o vozačima i kreće ponovo od koraka 2.
+		\end{itemize}
+
+\end{itemize}
 
 \subsubsection{\bfseries Nabavka vozila}
-\noindent Slučaj upotrebe: Nabavka vozila\\
-1. Kratak opis:
-\par -Šef voznog parka ima zadatak da naruči potrebnu količinu vozila kako bi ih prosledio novozaposlenim vozačima koji nemaju svoja vozila.\\
-2. Učesnici:
-\par -Dobavljač
-\par -Šef voznog parka\\
-3. Preduslovi:
-\par -Postoji barem jedan vozač koji nema svoje vozilo.\\
-4. Postuslovi:
-\par -Pribavljeno je onoliko vozila koliko ima vozača koji nemaju svoja.\\
-5. Osnovni tok:
-\par 1. Šef voznog parka proverava da li postoji neki vozač koji je zaposlen i čeka na firmu da mu pribavi vozilo.
-\par 2. Šef voznog parka nakon provere sastavlja porudžbinu.
-\par 3. Šef voznog parka stupa u kontakt sa dobavljačem.
-\par 4. Šef voznog parka isporučuje dobavljaču zahtevan broj vozila.
-\par 5. Dobavljač prihvata porudžbinu.
-\par 6. Dobavljač isporučuje Šefu voznog parka zahtevan broj vozila.
-\par 7. Šef voznog pa:rka ih smešta u vozni park do raspodele vozila vozačima.\\
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Šef voznog parka ima zadatak da naruči potrebnu količinu vozila kako bi ih prosledio novozaposlenim vozačima koji nemaju svoja vozila.
+		\end{itemize}
 
-\noindent 6. Alternativni tok:
-	\par 5: U slučaju da dobavljač nije u stanu da ostvari porudžbinu
-	\par	-Šef voznog parka odlaže nabavku u slučaju da su vozila potrebna za manje od 10 vozača.
-	\par	-Šef voznog parka pronalazi drugog dobavljača u slučaju da postoji 10 ili više vozača koji čekaju na vozila i nastavlja do koraka 5.
+	\item Učesnici:
+		\begin{itemize}
+		    \item Šef voznog parka
+			\item Dobavljač
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Postoji barem jedan vozač koji nema svoje vozilo.
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Pribavljeno je onoliko vozila koliko ima vozača koji nemaju svoja ukoliko su ispunjeni uslovi.
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{enumerate}
+		    \item Šef voznog parka proverava da li postoji neki vozač koji je zaposlen i čeka na firmu da mu pribavi vozilo.
+		    \item Šef voznog parka nakon provere sastavlja porudžbinu.
+		    \item Šef voznog parka stupa u kontakt sa dobavljačem.
+			\item Šef voznog parka isporučuje dobavljaču zahtevan broj vozila.
+			\item Dobavljač prihvata porudžbinu.
+			\item Dobavljač isporučuje Šefu voznog parka zahtevan broj vozila.
+			\item Šef voznog parka ih smešta u vozni park do raspodele vozila vozačima.
+		\end{enumerate}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item 5: U slučaju da dobavljač nije u stanu da ostvari porudžbinu:
+			\item Šef voznog parka odlaže nabavku u slučaju da su vozila potrebna za manje od 10 vozača.
+			\item Šef voznog parka pronalazi drugog dobavljača u slučaju da postoji 10 ili više vozača koji čekaju na vozila i nastavlja do koraka 5.
+		\end{itemize}
+
+\end{itemize}
 
 \subsubsection{\bfseries Predaja vozila vozaču}
-\noindent Slučaj upotrebe: Predaja vozila vozaču\\
-1. Kratak opis: 
-\par -Šef voznog parka prosleđuje vozilo iz voznog parka onom vozaču koji se zaposlio a nema svoje vozilo.\\
-2. Učesnici:
-\par -Šef voznog parka
-\par -Vozač\\
-3. Preduslovi:
-\par -Vozač koji nema svoje vozilo pa čeka na firmino vozilo\\
-4. Postuslovi:
-\par -Vozaču je predato vozilo na korišćenje.\\
-5. Osnovni tok:
-\par 1. Šef voznog parka obaveštava vozača da li ima vozilo.
-\par 2. Vozač i šef voznog parka se dogovaraju kada će se sastati.
-\par 3. Vozač i šef voznog parka se nalaze.
-\par 4. Vozač napismeno prihvata odgovornost za to vozilo.
-\par 5. Vozač preuzima vozilo.\\
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Šef voznog parka prosleđuje vozilo iz voznog parka onom vozaču koji se zaposlio a nema svoje vozilo.
+		\end{itemize}
 
-\noindent 6. Alternativni tok:
-	\par 1: Šef voznog parka nema vozilo za vozača
-	\par -Šef voznog parka dodaje vozača na spisak vozača koji čekaju na nabavku vozila nakon koje se kreće od koraka 1.
+	\item Učesnici:
+		\begin{itemize}
+		    \item Šef voznog parka
+			\item Vozač
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Vozač koji nema svoje vozilo pa čeka na firmino vozilo.
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Vozaču je predato vozilo na korišćenje.
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{enumerate}
+		    \item Šef voznog parka obaveštava vozača da li ima vozilo.
+		    \item Vozač i šef voznog parka se dogovaraju kada će se sastati.
+		    \item Vozač i šef voznog parka se nalaze.
+			\item Vozač napismeno prihvata odgovornost za to vozilo.
+			\item Vozač preuzima vozilo.
+		\end{enumerate}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item 1: Šef voznog parka nema vozilo za vozača:
+			\item Šef voznog parka dodaje vozača na spisak vozača koji čekaju na nabavku vozila nakon koje se kreće od koraka 1.
+		\end{itemize}
+
+\end{itemize}
 	
 \subsubsection{\bfseries Upravljanje podacima o vozačima}
+
 
 \subsubsection{\bfseries Upravljanje podacima o dobavljačima}
