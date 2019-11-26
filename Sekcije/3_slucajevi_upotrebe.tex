@@ -304,6 +304,14 @@
 
 \subsection{\bfseries Nabavka vozila}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{Slike/UseCaseZaVozniPark.jpg}
+\end{center}
+    \caption{Slučajevi upotrebe kod nabavke vozila.}
+\label{fig:contextDiagram}
+\end{figure}
+
 \subsubsection{\bfseries Kreiranje narudžbine vozila}
 
 \begin{itemize}
@@ -433,5 +441,112 @@
 	
 \subsubsection{\bfseries Upravljanje podacima o vozačima}
 
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Šef voznog parka upravlja bazom podataka o vozilima pomoću operacija za čitanje i brisanje.
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item Šef voznog parka
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Baza podataka o vozačima je operativna.
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Šef voznog parka je ažurirao bazu podataka o vozačima.
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{enumerate}
+		    \item Šef voznog parka otvara interfejs za rad sa bazom podataka o dobavljačima.
+		    \item Šef voznog parka proverava da li ima barem 10 vozača koji nemaju svoja vozila.
+		    \item Šef voznog parka kreira porudžbinu.
+			\item Ažurira podatke u bazi o onim vozačima čija vozila će uključiti u porudžbinu.
+		\end{enumerate}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item 1: Interfejs nije funkcionalan:
+			\item Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
+			\item 2: Ako nema 10 vozača ali postoji bar jedan vozač koji čeka na vozilo bar 2 nedelje:
+			\item Šef voznog parka kreira porudžbinu za sve vozače koji čekaju na vozilo u tom momentu odnosno nastavlja od koraka 2.
+		\end{itemize}
+
+\end{itemize}
 
 \subsubsection{\bfseries Upravljanje podacima o dobavljačima}
+
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Šef voznog parka upravlja bazom podataka o dobavljačima pomoću CRUD operacija.
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item Šef voznog parka
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Baza podataka o dobavljačima je operativna.
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Šef voznog parka je ažurirao bazu podataka o dobavljačima.
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{enumerate}
+		    \item Šef voznog parka otvara interfejs za bazu podataka o dobavljačima.
+		    \item Interfejs prikazuje trenutno stanje baze podataka.
+		    \item Šef voznog parka bira operaciju koju želi da izvrši.
+			\item Šef voznog parka izrvšava jednu od narednih operacija:
+			\begin{itemize}
+    \item Kreiranje:
+    \begin{enumerate}
+        \item Šef voznog parka unosi podatke o dobavljaču.
+        \item Šef voznog parka popunjava formu sa podacima o novom dobavljaču.
+        \item Šef voznog parka potvrđuje unos dobavljača u bazu podataka.
+    \end{enumerate}
+    \item Čitanje:
+    \begin{enumerate}
+        \item Šef voznog parka pretražuje podatke o dobavljačima.
+        \item Šef voznog parka bira da vidi detaljne informacije o određenom dobavljaču.
+    \end{enumerate}
+    \item Ažuriranje:
+    \begin{enumerate}
+        \item Šef voznog parka bira dobavljača čije informacije želi da ažurira.
+        \item Šef voznog parka prepravlja podatke o tom dobavljaču.
+        \item Šef voznog parka potvrđuje ažuriranje informacija o dobavljaču u bazi podataka.
+    \end{enumerate}
+    \item Brisanje:
+    \begin{enumerate}
+        \item Šef voznog parka bira dobavljača kog želi da obriše.
+        \item Šef voznog parka briše odabranog dobavljača.
+        \item Šef voznog parka potvrđuje brisanje dobavljača iz baze podataka.
+    \end{enumerate}
+\end{itemize}
+		\item Sistem pamti izmene u bazi podataka.
+		\end{enumerate}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item 1: Interfejs nije funkcionalan:
+			\item Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
+		\end{itemize}
+
+\end{itemize}
+
+
