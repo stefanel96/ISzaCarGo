@@ -1,7 +1,91 @@
 \section{\bfseries Slu\v cajevi upotrebe}
 
-\subsection{\bfseries Registrovanje korisnika}
-\subsection{\bfseries Login korisnika}
+\subsection{\bfseries Registrovanje i prijavljivanje korisnika}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{Slike/UseCaseZaRegLog.jpg}
+\end{center}
+    \caption{Dijagram slučaja upotrebe registrovanja i prijavljivanja korisnika.}
+\label{fig:RegistracijaPrijavljivanje}
+\end{figure}
+
+\subsubsection{\bfseries Registrovanje korisnika}
+
+\begin{itemize}
+    \item Kratak opis:
+        \begin{itemize}
+            \item Korisnik kroz aplikaciju upoznaje se sa idejom CarGo aplikacije i uslovima upotrebe.
+        \end{itemize}
+    \item Učesnici:
+        \begin{itemize}
+            \item Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
+        \end{itemize}
+    \item Preduslovi:
+        \begin{itemize}
+            \item Korisnik mora da bude punoletan
+            \item Korisnik mora da je državljanin Srbije i da zna svoj JMBG
+            \item Korisnik mora da priloži tačne informacije pri registraciji
+            \item Korisnik mora da ima pametan telefon koji podržava aplikaciju
+            \item Korisnik mora da ima karticu za plaćanje koju može da registruje/koristi
+        \end{itemize}
+    \item Postuslovi:
+        \begin{itemize}
+            \item Osoba je registrovana kao aktivni korisnik CarGo aplikacije
+        \end{itemize}
+    \item Glavni tok:
+        \begin{itemize}
+            \item Korisnik čita uslove upotrebe pri pokretanju registracije
+            \item Korisnik prihvata 
+            \item Korisnik unosi lične podatke u vidu: JMBG, adresa stanovanja, ime, prezime, imejl, željena šifra
+            \item Korisnik registruje karticu za plaćanje
+            \item Korisnik dobija mogućnost prijavljivanja
+        \end{itemize}
+    \item Alternativni tok:
+        \begin{itemize}
+            \item Korisnik odbija uslove upotrebe aplikacije pri čemu biva obavešten i dalje korišćenje aplikacije je onemogućeno dok ne pristane
+            \item Korisnik preskače registraciju kartice pri čemu mu se onemogućava naručivanje vozila dok je ne registruje
+        \end{itemize}
+    \item Dodatne informacije:
+        \begin{itemize}
+            \item Uslovi upotrebe su regulisani zakonom. Ne poštovanje tih uslova može dovesti do ukidanja naloga korisnika i daljih sudskih postupaka.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{\bfseries Prijavljivanje korisnika}
+
+\begin{itemize}
+    \item Kratak opis:
+        \begin{itemize}
+            \item Korisnik koristi prethodno zapamćene informacije za logovanje na aplikaciju
+        \end{itemize}
+    \item Učesnici:
+        \begin{itemize}
+            \item Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
+        \end{itemize}
+    \item Preduslovi:
+        \begin{itemize}
+            \item Korisnik mora da zna svoj imejl i šifru koju je koristio pri registraciji
+            \item Korisnik mora da ima pametan telefon koji podržava aplikaciju
+        \end{itemize}
+    \item Postuslovi:
+        \begin{itemize}
+            \item Osoba je prijavljena kao aktivni korisnik i može da koristi aplikaciju
+        \end{itemize}
+    \item Glavni tok:
+        \begin{itemize}
+            \item Korisnik unosi svoj imejl i šifru koju je koristio pri registraciji
+            \item Aplikacija proverava postojanje i tačnost podataka i prosledjuje korisnika dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
+        \end{itemize}
+    \item Alternativni tok:
+        \begin{itemize}
+            \item Korisnik šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka
+            \item Ukoliko korisnik više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi
+        \end{itemize}
+    \item Dodatne informacije:
+        \begin{itemize}
+            \item Zabrana prijavljivanja nakon nekoliko pokušaja obezbedjuje da CarGo server i korisnički podaci budu zaštićeni od 'brute force' napada.
+        \end{itemize}
+\end{itemize}
 
 
 \subsection{\bfseries Rad sa vozačima}
