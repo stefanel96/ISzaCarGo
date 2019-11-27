@@ -278,11 +278,48 @@
 \end{itemize}
 
 
-\subsection{\bfseries Login vozača}
 
-\subsection{\bfseries Vo\v znja}
+\subsubsection{\bfseries Prijavljivanje vozača}
 
-\subsubsection{\bfseries Naru\v civanje vo\v znje}
+\begin{itemize}
+    \item Kratak opis:
+        \begin{itemize}
+            \item Vozač koristi prethodno zapamćene informacije za logovanje na aplikaciju
+        \end{itemize}
+    \item Učesnici:
+        \begin{itemize}
+            \item Vozač
+        \end{itemize}
+    \item Preduslovi:
+        \begin{itemize}
+            \item Vozač mora da zna svoj imejl i šifru koju je koristio pri registraciji
+            \item Vozač mora da ima pametan telefon koji podržava aplikaciju
+        \end{itemize}
+    \item Postuslovi:
+        \begin{itemize}
+            \item Vozač je prijavljen i može da koristi aplikaciju i vozi putnike
+        \end{itemize}
+    \item Glavni tok:
+        \begin{itemize}
+            \item Vozač unosi svoj imejl i šifru koju je koristio pri registraciji
+            \item Aplikacija proverava postojanje i tačnost podataka i prosleđuje vozača dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
+        \end{itemize}
+    \item Alternativni tok:
+        \begin{itemize}
+            \item Vozač šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka
+            \item Ukoliko vozač više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi
+        \end{itemize}
+    \item Dodatne informacije:
+        \begin{itemize}
+            \item Zabrana prijavljivanja nakon nekoliko pokušaja obezbedjuje da CarGo server i korisnički podaci budu zaštićeni od 'brute force' napada.
+        \end{itemize}
+\end{itemize}
+
+
+
+\subsection{\bfseries Vožnja}
+
+\subsubsection{\bfseries Naručivanje vožnje}
 \begin{itemize}
 	\item Kratak opis:
 		\begin{itemize}
