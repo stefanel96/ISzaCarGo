@@ -5,6 +5,16 @@
 
 
 \subsection{\bfseries Rad sa vozačima}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{Slike/RadSaVozacimaUseCase.png}
+\end{center}
+    \caption{Slučajevi upotrebe Rad sa vozačima}
+\label{fig:contextDiagram}
+\end{figure}
+
+
 \subsubsection{\bfseries Registrovanje vozača}
 
 \begin{itemize}
@@ -13,9 +23,10 @@
 			\item Korisnik pristupa veb stranici i prijavljuje se za pružanje usluga na putu
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
-			\item Zainteresovana osoba koja želi da postane deo CarGo zajendice		
+			\item Zainteresovana osoba koja želi da postane deo CarGo zajednice
+			\item HR
 		\end{itemize}				
 
 	\item Preduslovi:
@@ -108,7 +119,79 @@
 
 
 \subsubsection{\bfseries Otpuštanje vozača}
-%TODO
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Prekid radnog odnosa za vozača
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item HR
+		    \item Vozač
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Loša ocena
+		    \item Nezadovoljstvo radnika
+		    \item Nezadovoljstvo poslodavca
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Vozač je otpušten
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{itemize}
+		    \item Vozač je dobio veliki broj loših ocena od strane korisnika
+		    \item HR pokreće postupak otpuštanja vozača
+		    \item Vozač dobija otkaz
+		\end{itemize}
+
+	\item Alternativni tok:
+		\begin{itemize}
+		    \item Vozač svojevoljno podnosi zahtev za raskidanje radnog odnosa
+		\end{itemize}
+
+\end{itemize}
+
+
+\subsubsection{\bfseries Vraćanje vozila}
+\begin{itemize}
+	\item Kratak opis:
+		\begin{itemize}
+			\item Ukoliko vozač nije imao svoje vozilo i dobio je od firme, nakon prekida radnog odnosa vozač mora da vrati dobijeno vozilo šefu voznog parka
+		\end{itemize}
+
+	\item Učesnici:
+		\begin{itemize}
+		    \item Vozač
+		    \item Šef voznog parka
+		\end{itemize}
+
+
+	\item Preduslovi:
+		\begin{itemize}
+		    \item Vozač je otpušten
+		\end{itemize}
+
+
+	\item Postuslovi:
+		\begin{itemize}
+			\item Vozilo je vraćeno
+	\end{itemize}
+
+	\item Glavni tok:
+		\begin{itemize}
+		    \item Vozač daje ili dobija otkaz
+		    \item Vozač vraća vozilo
+		\end{itemize}
+
+\end{itemize}
 
 
 \subsection{\bfseries Login vozača}
@@ -216,7 +299,7 @@
 
 	\item Osnovni tok:
 		\begin{itemize}
-		    \itemKorisnik čeka da vozač stigne na prosleđenu lokaciju.
+		    \item Korisnik čeka da vozač stigne na prosleđenu lokaciju.
 		    \item Vozač preuzima korisnika koji ga je unajmio.  
 		    \item Vozač prevozi korisnika do ciljne lokacije.
 		\end{itemize}
