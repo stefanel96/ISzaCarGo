@@ -18,7 +18,7 @@
         \end{itemize}
     \item Učesnici:
         \begin{itemize}
-            \item Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
+            Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
         \end{itemize}
     \item Preduslovi:
         \begin{itemize}
@@ -60,7 +60,7 @@
         \end{itemize}
     \item Učesnici:
         \begin{itemize}
-            \item Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
+            Zainteresovana osoba koja želi da koristi usluge CarGo aplikacije.
         \end{itemize}
     \item Preduslovi:
         \begin{itemize}
@@ -98,19 +98,17 @@
 \label{fig:contextDiagram}
 \end{figure}
 
-
 \subsubsection{\bfseries Registrovanje vozača}
 
 \begin{itemize}
 	\item Kratak opis:
 		\begin{itemize}
-			\item Korisnik pristupa veb stranici i prijavljuje se za pružanje usluga na putu
+			\item Potencijalni vozač pristupa veb stranici i prijavljuje se za pružanje usluga na putu
 		\end{itemize}
  
-	\item Učesnici:
+	\item Ucesnici:
 		\begin{itemize}
-			\item Zainteresovana osoba koja želi da postane deo CarGo zajednice
-			\item HR
+			\item Zainteresovana osoba koja želi da postane deo CarGo zajendice		
 		\end{itemize}				
 
 	\item Preduslovi:
@@ -276,9 +274,6 @@
 		\end{itemize}
 
 \end{itemize}
-
-
-
 \subsubsection{\bfseries Prijavljivanje vozača}
 
 \begin{itemize}
@@ -317,9 +312,16 @@
 
 
 
-\subsection{\bfseries Vožnja}
+\subsection{\bfseries Vo\v znja}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{Slike/VoznjaUseCase.png}
+\end{center}
+    \caption{Dijagram slučaja upotrebe Vožnja.}
+\label{fig:Vožnja}
+\end{figure}
 
-\subsubsection{\bfseries Naručivanje vožnje}
+\subsubsection{\bfseries Naru\v civanje vo\v znje}
 \begin{itemize}
 	\item Kratak opis:
 		\begin{itemize}
@@ -542,11 +544,11 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{enumerate}
+		\begin{itemize}
 		    \item Šef voznog parka na nedeljnom nivou proverava bazu podataka o vozačima da bi video koliko novih vozača nema svoje vozilo.
 		    \item Šef voznog parka proverava da li ima 10 ili više vozača kojima je potrebno vozilo ili postoji barem jedan vozač koji čeka na vozilo više od dve nedelje.
 		    \item Šef voznog parka sastavlja porudžbinu.
-		\end{enumerate}
+		\end{itemize}
 
 	\item Alternativni tok:
 		\begin{itemize}
@@ -582,7 +584,7 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{enumerate}
+		\begin{itemize}
 		    \item Šef voznog parka proverava da li postoji neki vozač koji je zaposlen i čeka na firmu da mu pribavi vozilo.
 		    \item Šef voznog parka nakon provere sastavlja porudžbinu.
 		    \item Šef voznog parka stupa u kontakt sa dobavljačem.
@@ -590,7 +592,7 @@
 			\item Dobavljač prihvata porudžbinu.
 			\item Dobavljač isporučuje Šefu voznog parka zahtevan broj vozila.
 			\item Šef voznog parka ih smešta u vozni park do raspodele vozila vozačima.
-		\end{enumerate}
+		\end{itemize}
 
 	\item Alternativni tok:
 		\begin{itemize}
@@ -627,13 +629,13 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{enumerate}
+		\begin{itemize}
 		    \item Šef voznog parka obaveštava vozača da li ima vozilo.
 		    \item Vozač i šef voznog parka se dogovaraju kada će se sastati.
 		    \item Vozač i šef voznog parka se nalaze.
 			\item Vozač napismeno prihvata odgovornost za to vozilo.
 			\item Vozač preuzima vozilo.
-		\end{enumerate}
+		\end{itemize}
 
 	\item Alternativni tok:
 		\begin{itemize}
@@ -642,7 +644,7 @@
 		\end{itemize}
 
 \end{itemize}
-	
+
 \subsubsection{\bfseries Upravljanje podacima o vozačima}
 
 \begin{itemize}
@@ -669,12 +671,12 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{enumerate}
+		\begin{itemize}
 		    \item Šef voznog parka otvara interfejs za rad sa bazom podataka o dobavljačima.
 		    \item Šef voznog parka proverava da li ima barem 10 vozača koji nemaju svoja vozila.
 		    \item Šef voznog parka kreira porudžbinu.
 			\item Ažurira podatke u bazi o onim vozačima čija vozila će uključiti u porudžbinu.
-		\end{enumerate}
+		\end{itemize}
 
 	\item Alternativni tok:
 		\begin{itemize}
@@ -712,38 +714,38 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{enumerate}
+		\begin{itemize}
 		    \item Šef voznog parka otvara interfejs za bazu podataka o dobavljačima.
 		    \item Interfejs prikazuje trenutno stanje baze podataka.
 		    \item Šef voznog parka bira operaciju koju želi da izvrši.
 			\item Šef voznog parka izrvšava jednu od narednih operacija:
 			\begin{itemize}
     \item Kreiranje:
-    \begin{enumerate}
+    \begin{itemize}
         \item Šef voznog parka unosi podatke o dobavljaču.
         \item Šef voznog parka popunjava formu sa podacima o novom dobavljaču.
         \item Šef voznog parka potvrđuje unos dobavljača u bazu podataka.
-    \end{enumerate}
+    \end{itemize}
     \item Čitanje:
-    \begin{enumerate}
+    \begin{itemize}
         \item Šef voznog parka pretražuje podatke o dobavljačima.
         \item Šef voznog parka bira da vidi detaljne informacije o određenom dobavljaču.
-    \end{enumerate}
+    \end{itemize}
     \item Ažuriranje:
-    \begin{enumerate}
+    \begin{itemize}
         \item Šef voznog parka bira dobavljača čije informacije želi da ažurira.
         \item Šef voznog parka prepravlja podatke o tom dobavljaču.
         \item Šef voznog parka potvrđuje ažuriranje informacija o dobavljaču u bazi podataka.
-    \end{enumerate}
+    \end{itemize}
     \item Brisanje:
-    \begin{enumerate}
+    \begin{itemize}
         \item Šef voznog parka bira dobavljača kog želi da obriše.
         \item Šef voznog parka briše odabranog dobavljača.
         \item Šef voznog parka potvrđuje brisanje dobavljača iz baze podataka.
-    \end{enumerate}
+    \end{itemize}
 \end{itemize}
 		\item Sistem pamti izmene u bazi podataka.
-		\end{enumerate}
+		\end{itemize}
 
 	\item Alternativni tok:
 		\begin{itemize}
@@ -752,5 +754,6 @@
 		\end{itemize}
 
 \end{itemize}
+
 
 
