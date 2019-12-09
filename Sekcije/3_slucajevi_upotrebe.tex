@@ -33,17 +33,17 @@
             \item Osoba je registrovana kao aktivni korisnik CarGo aplikacije
         \end{itemize}
     \item Glavni tok:
-        \begin{itemize}
+        \begin{enumerate}
             \item Korisnik čita uslove upotrebe pri pokretanju registracije
             \item Korisnik prihvata 
             \item Korisnik unosi lične podatke u vidu: JMBG, adresa stanovanja, ime, prezime, imejl, željena šifra
             \item Korisnik registruje karticu za plaćanje
-            \item Korisnik dobija mogućnost prijavljivanja
-        \end{itemize}
+            \item Sistem omogućava korisniku prijavljivanje
+        \end{enumerate}
     \item Alternativni tok:
         \begin{itemize}
-            \item Korisnik odbija uslove upotrebe aplikacije pri čemu biva obavešten i dalje korišćenje aplikacije je onemogućeno dok ne pristane
-            \item Korisnik preskače registraciju kartice pri čemu mu se onemogućava naručivanje vozila dok je ne registruje
+            \item 2. Korisnik odbija uslove upotrebe aplikacije. Sistem obaveštava korisnika i dalje korišćenje aplikacije je onemogućeno dok ne pristane
+            \item 4. Korisnik preskače registraciju kartice pri čemu mu se onemogućava naručivanje vozila dok je ne registruje
         \end{itemize}
     \item Dodatne informacije:
         \begin{itemize}
@@ -72,14 +72,14 @@
             \item Osoba je prijavljena kao aktivni korisnik i može da koristi aplikaciju
         \end{itemize}
     \item Glavni tok:
-        \begin{itemize}
+        \begin{enumerate}
             \item Korisnik unosi svoj imejl i šifru koju je koristio pri registraciji
-            \item Aplikacija proverava postojanje i tačnost podataka i prosledjuje korisnika dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
-        \end{itemize}
+            \item Sistem proverava postojanje i tačnost podataka i prosledjuje korisnika dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
+        \end{enumerate}
     \item Alternativni tok:
         \begin{itemize}
-            \item Korisnik šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka
-            \item Ukoliko korisnik više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi
+            \item 1. Korisnik šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka. Sve dok korisnik ne unese podatke ostajemo u koraku 1, a nakon unosa prelazi se na korak 2.
+            \item 2. Ukoliko korisnik više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi. Nakon tog perioda, korisnik je vraćen na korak 1.
         \end{itemize}
     \item Dodatne informacije:
         \begin{itemize}
@@ -129,18 +129,18 @@
 
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Korisnik odlazi na veb stranicu i nalazi formu za prijavu
 		    \item Korisnik popunjava prijavu
 		    \item Na mejl stize potvrda o uspešnosti prijavljivanja i termin dolaska na razgovor sa HR
 		    \item Potencijalni vozač donosi na razgovor potrebnu dokumentaciju i radi test
 		    \item HR odlučuje da li je vozač kompetentan za tu poziciju i ukoliko jeste sistem beleži novog vozača u bazu
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-    			\item Korisnik nije uneo ispravne podatke za prijavu. Slučaj upotrebe se nastavlja na drugom koraku glavnog toka
-		    \item Korisnik nije doneo potrebnu dokumentaciju na razgovor. U tom slučaju korisnik dobija novi termin za razgovor
+    			\item 2. Korisnik nije uneo ispravne podatke za prijavu. Slučaj upotrebe se nastavlja na drugom koraku glavnog toka
+		    \item 4. Korisnik nije doneo potrebnu dokumentaciju na razgovor. U tom slučaju korisnik dobija novi termin za razgovor
 		\end{itemize}
 
 
@@ -181,15 +181,15 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Ukoliko vozač nema vozilo HR salje zahtev šefu voznog parka
 		    \item Šef voznog parka proverava da li ima slobodnih vozila
 		    \item Ukoliko ima dodeljuje vozilo vozaču
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Ukoliko nema, vozač se stavlja na čekanje i prelazi se na slucaj upotrebe nabavke vozila
+		    \item 2. Ukoliko nema, vozač se stavlja na čekanje i prelazi se na slucaj upotrebe nabavke vozila
 		\end{itemize}
 
 	\item Dodatne informacije:
@@ -228,15 +228,15 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Vozač je dobio veliki broj loših ocena od strane korisnika
 		    \item HR pokreće postupak otpuštanja vozača
 		    \item Vozač dobija otkaz
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Vozač svojevoljno podnosi zahtev za raskidanje radnog odnosa
+		    \item 3. Vozač svojevoljno podnosi zahtev za raskidanje radnog odnosa
 		\end{itemize}
 
 \end{itemize}
@@ -268,10 +268,10 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Vozač daje ili dobija otkaz
 		    \item Vozač vraća vozilo
-		\end{itemize}
+		\end{enumerate}
 
 \end{itemize}
 \subsubsection{\bfseries Prijavljivanje vozača}
@@ -295,14 +295,14 @@
             \item Vozač je prijavljen i može da koristi aplikaciju i vozi putnike
         \end{itemize}
     \item Glavni tok:
-        \begin{itemize}
+        \begin{enumerate}
             \item Vozač unosi svoj imejl i šifru koju je koristio pri registraciji
-            \item Aplikacija proverava postojanje i tačnost podataka i prosleđuje vozača dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
-        \end{itemize}
+            \item Sistem proverava postojanje i tačnost podataka i prosleđuje vozača dalje ka osnovnom interfejsu aplikacije ili ga obaveštava o neuspešnom prijavljivanju
+        \end{enumerate}
     \item Alternativni tok:
         \begin{itemize}
-            \item Vozač šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka
-            \item Ukoliko vozač više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi
+            \item 1. Vozač šalje mejl kontakt centru za pomoć, ukoliko ne može da se seti svojih podataka
+            \item 2. Ukoliko vozač više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi. Nakon tog perioda, vozač je vraćen na korak 1.
         \end{itemize}
     \item Dodatne informacije:
         \begin{itemize}
@@ -328,7 +328,7 @@
 			\item Korisnik naručuje vožnju radi transporta sa jednog odredišta na drugo.
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
 			\item Korisnik
 		    \item Vozač
@@ -347,8 +347,8 @@
 		\end{itemize}		
 
 
-	\item Osnovni tok:
-		\begin{itemize}
+	\item Glavni tok:
+		\begin{enumerate}
 		    \item Korisnik se prijavljuje na aplikaciju
 		    \item Definiše putem  aplikacije  početnu lokaciju
 		    \item Definiše lokaciju na koju želi da bude odvežen
@@ -357,11 +357,11 @@
 		    \item Vozači koji žele i u mogućnosti su da prime vožnju to i čine
 		    \item Korisnik bira  nekog od ponuđenih vozača u zavisnosti od nekoliko parametara(ocena vozača, udaljenost od trenutne lokacije) ukoliko mu cena odgovara
 		    \item Korisnik čeka odabranog vozača na definisanoj lokaciji u cilju transporta. 
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-    		\item Ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju 
+    		\item 7. Ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju 
 		    korisnik se obaveštava da trenutno ne postoji slobodno  vozilo i ukoliko to korisnik želi, stavlja se na listu čekanja dok se ne oslobodi neko vozilo.
 		\end{itemize}
 \end{itemize}
@@ -372,7 +372,7 @@
 			\item Vozač prihvata ili odbija zahtev za prevoz korisnika.
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
 		    \item Vozač
 		\end{itemize}				
@@ -388,12 +388,12 @@
 		\end{itemize}		
 
 
-	\item Osnovni tok:
-		\begin{itemize}
+	\item Glavni tok:
+		\begin{enumerate}
 		    \item Korisnik šalje zahtev za prevoz
 		    \item Zahtev preko servera stiže do vozača
 		    \item Vozač prihvata ili odbija korisnički zahtev
-		\end{itemize}
+		\end{enumerate}
 \end{itemize}
 
 \subsubsection{\bfseries Prevoz putnika}
@@ -403,7 +403,7 @@
 			\item Vrši se prevoz korisnika od strane vozača od jedne lokacije do druge.
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
 		    \item Korisnik
 		    \item Vozač
@@ -420,12 +420,12 @@
 		\end{itemize}		
 
 
-	\item Osnovni tok:
-		\begin{itemize}
+	\item Glavni tok:
+		\begin{enumerate}
 		    \item Korisnik čeka da vozač stigne na prosleđenu lokaciju.
 		    \item Vozač preuzima korisnika koji ga je unajmio.  
 		    \item Vozač prevozi korisnika do ciljne lokacije.
-		\end{itemize}
+		\end{enumerate}
 \end{itemize}
 
 \subsubsection{\bfseries Ocenjivanje voza\v ca}
@@ -435,7 +435,7 @@
 			\item Korisnik ocenjuje vozača na osnovu utisaka koji je isti na njega ostavio tokom vožnje.
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
 			\item Korisnik
 		\end{itemize}				
@@ -451,17 +451,17 @@
 		\end{itemize}		
 
 
-	\item Osnovni tok:
-		\begin{itemize}
+	\item Glavni tok:
+		\begin{enumerate}
 		    \item Korisnik je prevežen sa jedne lokacije na drugu
 		    \item Korisnik bira da li hoće da oceni vozača
 		    \item Korisnik vrši ocenjivanje vozača ocenom od 1 do 5 
 		     
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-    		\item Ukoliko je korisnik odabrao opciju da ne želi da oceni vozača korak 3 se preskače.
+    		\item 2. Ukoliko je korisnik odabrao opciju da ne želi da oceni vozača korak 3 se preskače.
 		\end{itemize}
 \end{itemize}
 
@@ -472,7 +472,7 @@
 			\item Korisnik isplaćuje uslugu prevoza.
 		\end{itemize}
  
-	\item Ucesnici:
+	\item Učesnici:
 		\begin{itemize}
 			\item Korisnik
 			\item Banka
@@ -490,19 +490,18 @@
 		\end{itemize}		
 
 
-	\item Osnovni tok:
-		\begin{itemize}
+	\item Glavni tok:
+		\begin{enumerate}
 		    \item Korisnik je prevežen.
-		    \item Cena je obračunata na osnovu predviđene rute.
-		    \item Novac se uplaćuje preko aplikacije
-		    \item Banka vrši prosleđivanje uplaćenog novca  vozaču
+		    \item Korisnik vrši uplatu novca(svota je definisana prilikom naručivanja vožnje) preko aplikacije
+		    \item Banka vrši prosleđivanje uplaćenog novca vozaču
 		    \item Vozaču leže uplata
 		     
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-    		\item Ruta je promenjena tokom vožnje(korisnik je zahtevao da se ide drugim putem) ili se krajnja lokacija ne poklapa sa onom koja je unapred definisana. U tim slučajevima, cena je obračunata na osnovu nove rute i nastavljas e tok od koraka 3.
+    		\item 2. Korisnik plaća drugačiji iznos od unapred definisanog jer se može desiti da je ruta promenjena tokom vožnje(korisnik je zahtevao da se ide drugim putem) ili se krajnja lokacija ne poklapa sa onom koja je unapred definisana. Tok se nastavlja od koraka 3.
 		\end{itemize}
 \end{itemize}
 
@@ -544,16 +543,15 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Šef voznog parka na nedeljnom nivou proverava bazu podataka o vozačima da bi video koliko novih vozača nema svoje vozilo.
 		    \item Šef voznog parka proverava da li ima 10 ili više vozača kojima je potrebno vozilo ili postoji barem jedan vozač koji čeka na vozilo više od dve nedelje.
 		    \item Šef voznog parka sastavlja porudžbinu.
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item 2: Ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje.
-			\item -Šef voznog parka čeka sledeću proveru baze o vozačima i kreće ponovo od koraka 2.
+		    \item 2. Ukoliko ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje, šef voznog parka čeka sledeću proveru baze o vozačima i kreće ponovo od koraka 2.
 		\end{itemize}
 
 \end{itemize}
@@ -584,7 +582,7 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Šef voznog parka proverava da li postoji neki vozač koji je zaposlen i čeka na firmu da mu pribavi vozilo.
 		    \item Šef voznog parka nakon provere sastavlja porudžbinu.
 		    \item Šef voznog parka stupa u kontakt sa dobavljačem.
@@ -592,13 +590,11 @@
 			\item Dobavljač prihvata porudžbinu.
 			\item Dobavljač isporučuje Šefu voznog parka zahtevan broj vozila.
 			\item Šef voznog parka ih smešta u vozni park do raspodele vozila vozačima.
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item 5: U slučaju da dobavljač nije u stanu da ostvari porudžbinu:
-			\item Šef voznog parka odlaže nabavku u slučaju da su vozila potrebna za manje od 10 vozača.
-			\item Šef voznog parka pronalazi drugog dobavljača u slučaju da postoji 10 ili više vozača koji čekaju na vozila i nastavlja do koraka 5.
+		    \item 5. U slučaju da dobavljač nije u stanju da ostvari porudžbinu, šef voznog parka odlaže nabavku u slučaju da su vozila potrebna za manje od 10 vozača ili pronalazi drugog dobavljača u slučaju da postoji 10 ili više vozača koji čekaju na vozila i nastavlja od koraka 5.
 		\end{itemize}
 
 \end{itemize}
@@ -629,18 +625,17 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Šef voznog parka obaveštava vozača da li ima vozilo.
 		    \item Vozač i šef voznog parka se dogovaraju kada će se sastati.
 		    \item Vozač i šef voznog parka se nalaze.
 			\item Vozač napismeno prihvata odgovornost za to vozilo.
 			\item Vozač preuzima vozilo.
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item 1: Šef voznog parka nema vozilo za vozača:
-			\item Šef voznog parka dodaje vozača na spisak vozača koji čekaju na nabavku vozila nakon koje se kreće od koraka 1.
+		    \item 1. Ukoliko šef voznog parka nema vozilo za vozača on dodaje vozača na spisak vozača koji čekaju na nabavku vozila nakon čega se kreće od koraka 1.
 		\end{itemize}
 
 \end{itemize}
@@ -671,19 +666,17 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Šef voznog parka otvara interfejs za rad sa bazom podataka o dobavljačima.
 		    \item Šef voznog parka proverava da li ima barem 10 vozača koji nemaju svoja vozila.
 		    \item Šef voznog parka kreira porudžbinu.
 			\item Ažurira podatke u bazi o onim vozačima čija vozila će uključiti u porudžbinu.
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item 1: Interfejs nije funkcionalan:
-			\item Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
-			\item 2: Ako nema 10 vozača ali postoji bar jedan vozač koji čeka na vozilo bar 2 nedelje:
-			\item Šef voznog parka kreira porudžbinu za sve vozače koji čekaju na vozilo u tom momentu odnosno nastavlja od koraka 2.
+		    \item 1. Interfejs nije funkcionalan: Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
+			\item 2. Ako nema 10 vozača ali postoji bar jedan vozač koji čeka na vozilo bar 2 nedelje: Šef voznog parka kreira porudžbinu za sve vozače koji čekaju na vozilo u tom momentu odnosno nastavlja od koraka 2.
 		\end{itemize}
 
 \end{itemize}
@@ -714,46 +707,42 @@
 	\end{itemize}
 
 	\item Glavni tok:
-		\begin{itemize}
+		\begin{enumerate}
 		    \item Šef voznog parka otvara interfejs za bazu podataka o dobavljačima.
 		    \item Interfejs prikazuje trenutno stanje baze podataka.
 		    \item Šef voznog parka bira operaciju koju želi da izvrši.
 			\item Šef voznog parka izrvšava jednu od narednih operacija:
 			\begin{itemize}
-    \item Kreiranje:
-    \begin{itemize}
-        \item Šef voznog parka unosi podatke o dobavljaču.
-        \item Šef voznog parka popunjava formu sa podacima o novom dobavljaču.
-        \item Šef voznog parka potvrđuje unos dobavljača u bazu podataka.
-    \end{itemize}
-    \item Čitanje:
-    \begin{itemize}
-        \item Šef voznog parka pretražuje podatke o dobavljačima.
-        \item Šef voznog parka bira da vidi detaljne informacije o određenom dobavljaču.
-    \end{itemize}
-    \item Ažuriranje:
-    \begin{itemize}
-        \item Šef voznog parka bira dobavljača čije informacije želi da ažurira.
-        \item Šef voznog parka prepravlja podatke o tom dobavljaču.
-        \item Šef voznog parka potvrđuje ažuriranje informacija o dobavljaču u bazi podataka.
-    \end{itemize}
-    \item Brisanje:
-    \begin{itemize}
-        \item Šef voznog parka bira dobavljača kog želi da obriše.
-        \item Šef voznog parka briše odabranog dobavljača.
-        \item Šef voznog parka potvrđuje brisanje dobavljača iz baze podataka.
-    \end{itemize}
-\end{itemize}
+                \item Kreiranje:
+                \begin{itemize}
+                    \item Šef voznog parka unosi podatke o dobavljaču.
+                    \item Šef voznog parka popunjava formu sa podacima o novom dobavljaču.
+                    \item Šef voznog parka potvrđuje unos dobavljača u bazu podataka.
+                \end{itemize}
+                \item Čitanje:
+                \begin{itemize}
+                    \item Šef voznog parka pretražuje podatke o dobavljačima.
+                    \item Šef voznog parka bira da vidi detaljne informacije o određenom dobavljaču.
+                \end{itemize}
+                \item Ažuriranje:
+                \begin{itemize}
+                    \item Šef voznog parka bira dobavljača čije informacije želi da ažurira.
+                    \item Šef voznog parka prepravlja podatke o tom dobavljaču.
+                    \item Šef voznog parka potvrđuje ažuriranje informacija o dobavljaču u bazi podataka.
+                \end{itemize}
+                \item Brisanje:
+                \begin{itemize}
+                    \item Šef voznog parka bira dobavljača kog želi da obriše.
+                    \item Šef voznog parka briše odabranog dobavljača.
+                    \item Šef voznog parka potvrđuje brisanje dobavljača iz baze podataka.
+                \end{itemize}
+            \end{itemize}
 		\item Sistem pamti izmene u bazi podataka.
-		\end{itemize}
+		\end{enumerate}
 
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item 1: Interfejs nije funkcionalan:
-			\item Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
+		    \item 1. Interfejs nije funkcionalan: Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
 		\end{itemize}
 
 \end{itemize}
-
-
-
