@@ -3,7 +3,7 @@
 \subsection{\bfseries Registrovanje i prijavljivanje korisnika}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=\textwidth]{Slike/UseCaseZaRegLog.jpg}
+\includegraphics[scale=0.9]{Slike/UseCaseZaRegLog.jpg}
 \end{center}
     \caption{Dijagram slučaja upotrebe registrovanja i prijavljivanja korisnika.}
 \label{fig:RegistracijaPrijavljivanje}
@@ -52,6 +52,13 @@
         \end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth, height=125pt]{Slike/RegistracijaKorisnika.png}
+\end{center}
+    \caption{Dijagram aktivnosti registracije korisnika.}
+\label{fig:RegistracijaKorisnika}
+\end{figure}
 
 \subsubsection{\bfseries Prijavljivanje korisnika}
 
@@ -66,6 +73,7 @@
         \end{itemize}
     \item Preduslovi:
         \begin{itemize}
+            \item Korisnik mora da je registrovan da bi se uspešno prijavio
             \item Korisnik mora da zna svoje korisničko ime i šifru koju je koristio pri registraciji.
             \item Korisnik mora da ima pametan telefon koji podržava aplikaciju.
         \end{itemize}
@@ -80,7 +88,7 @@
         \end{enumerate}
     \item Alternativni tok:
         \begin{itemize}
-            \item Ukoliko prilikom koraka 1 korisnik ne može da se seti svojih podataka, šalje mejl kontakt centru za pomoć. Sve dok korisnik ne unese podatke ostajemo u koraku 1, a nakon unosa prelazi se na korak 2.
+            \item Ukoliko prilikom koraka 1 korisnik ne može da se seti svojih podataka, šalje mejl kontakt centru za pomoć. Sve dok korisnik ne unese podatke ostaje u koraku 1, a nakon unosa prelazi se na korak 2.
 			\item Ukoliko korisnik ne unese validne podatke sistem ga obaveštava o greški prilikom prijavljivanja.
             \item Ukoliko korisnik u koraku 2 više puta ne uspe da se prijavi sa unetim podacima, dobija zabranu pokušaja 30 sekundi. Nakon tog perioda, korisnik je vraćen na korak 1.
         \end{itemize}
@@ -118,7 +126,7 @@
 		    \item Prijavljeni mora da ima vozačku dozvolu.
 		    \item Bar 5 godina iskustva u vožnji.
 		    \item Napredno poznavanje grada.
-		    \item Auto koji nije stariji od 10 godina.
+		    \item Tehnički ispravan auto koji nije stariji od 10 godina ukoliko želi da koristi svoj lični auto. (U suprotnom će morati da prinese zahtev za dobijanje automobila za prevoz od strane CarGo zajednice)
 		    \item Pametan telefon.
 		    \item Uverenje da nije osuđivan.
 		    \item Uspešno položen test ličnosti.
@@ -131,7 +139,7 @@
 		\begin{enumerate}
 		    \item Zainteresovana osoba pristupa veb stranici i nalazi formu za prijavu.
 		    \item Zainteresovana osoba popunjava prijavu.
-		    \item Na mejl stize potvrda o uspešnosti prijavljivanja i termin dolaska na razgovor sa menadžerom za ljudske resurse.
+		    \item Na mejl stiže potvrda o uspešnosti prijavljivanja i termin dolaska na razgovor sa menadžerom za ljudske resurse.
 		    \item Potencijalni vozač donosi na razgovor potrebnu dokumentaciju i radi test ličnosti.
 		    \item Menadžer za ljudske resurse odlučuje da li je vozač kompetentan za tu poziciju i ukoliko jeste sistem beleži novog vozača u bazi.
 		\end{enumerate}
@@ -171,7 +179,7 @@
 	    \end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Ukoliko vozač nema vozilo, menadžer za ljudske resurse salje zahtev šefu voznog parka.
+		    \item Menadžer za ljudske resurse salje zahtev šefu voznog parka.
 		    \item Šef voznog parka proverava da li ima slobodnih vozila.
 		    \item Ukoliko ima dodeljuje slobodno vozilo vozaču.
 		\end{enumerate}
@@ -210,13 +218,12 @@
 	    \end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Vozač je dobio veliki broj loših ocena od strane korisnika.
 		    \item Menadžer za ljudske resurse pokreće postupak otpuštanja vozača.
 		    \item Vozač dobija otkaz.
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Korak 3 - vozač svojevoljno podnosi zahtev za raskidanje radnog odnosa.
+		    \item Korak 2 - vozač svojevoljno podnosi zahtev za raskidanje radnog odnosa.
 		\end{itemize}
 \end{itemize}
 
@@ -289,7 +296,7 @@
 \subsection{\bfseries Vožnja}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=\textwidth]{Slike/VoznjaUseCase.png}
+\includegraphics[scale=0.7]{Slike/VoznjaUseCase.png}
 \end{center}
     \caption{Dijagram slučaja upotrebe Vožnja.}
 \label{fig:Vožnja}
@@ -327,12 +334,11 @@
 		    \item Server šalje zahtev vozačima.
 		    \item Vozači koji žele i u mogućnosti su da prime vožnju to i čine.
 		    \item Korisnik bira nekog od ponuđenih vozača u zavisnosti od nekoliko parametara (ocena vozača, udaljenost od trenutne lokacije, ukoliko mu cena odgovara).
-		    \item Korisnik čeka odabranog vozača na definisanoj lokaciji u cilju transporta. 
+		    \item Korisnik čeka odabranog vozača na definisanoj lokaciji u cilju transporta.
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-    		\item Korak 7 - ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju 
-		    korisnik se obaveštava da trenutno ne postoji slobodno vozilo i ukoliko to korisnik želi, stavlja se na listu čekanja dok se ne oslobodi neko vozilo.
+    		\item Korak 7 - ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju korisnik se obaveštava da trenutno ne postoji slobodno vozilo i ukoliko to korisnik želi, stavlja se na listu čekanja dok se ne oslobodi neko vozilo.
 		\end{itemize}
 \end{itemize}
 
@@ -381,6 +387,7 @@
 		\begin{itemize}
 		    \item Korisnik mora da naruči vožnju.
 		    \item Vozač mora da prihvati vožnju.
+		    \item Korisnik mora da izabere jednog od vozača koji su prihvatili vožnju.
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
@@ -416,12 +423,13 @@
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Korisnik je prevežen sa jedne lokacije na drugu.
+		    \item Korisnik prijavljuje putem aplikacije da je stigao na svoje odredište.
 		    \item Korisnik bira da li hoće da oceni vozača.
 		    \item Korisnik vrši ocenjivanje vozača ocenom od 1 do 5. 
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
+		    \item Korak 1/2 - ukoliko je korisnik izuzetno nezadovoljan svojom vožnjom ili nije ni stigao na svoje odredište može da prijavi žalbu CarGo korisničkom servisu putem mejla ili CarGo web stranice.
     		\item Korak 2 - ukoliko je korisnik odabrao opciju da ne želi da oceni vozača korak 3 se preskače.
 		\end{itemize}
 \end{itemize}
