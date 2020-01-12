@@ -24,7 +24,6 @@
     \item Preduslovi:
         \begin{itemize}
             \item Korisnik mora da bude punoletan.
-            \item Korisnik mora da bude državljanin Republike Srbije i da zna svoj JMBG.
             \item Korisnik mora da priloži tačne informacije pri registraciji.
             \item Korisnik mora da ima pametan telefon koji podržava aplikaciju.
             \item Korisnik mora da ima karticu za plaćanje koju može da registruje/koristi.
@@ -52,13 +51,15 @@
         \end{itemize}
 \end{itemize}
 
+
 \begin{figure}[H]
-\begin{center}
-\includegraphics[width=\textwidth, height=125pt]{Slike/RegistracijaKorisnika.png}
-\end{center}
-    \caption{Dijagram aktivnosti registracije korisnika.}
+\begin{left}
+\includegraphics[width=480,height=125]{Slike/RegistracijaKorisnika.png}
+\end{left}
+    \caption{Dijagram aktivnosti registracije korisnika}
 \label{fig:RegistracijaKorisnika}
 \end{figure}
+
 
 \subsubsection{\bfseries Prijavljivanje korisnika}
 
@@ -98,6 +99,13 @@
         \end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=480,height=135]{Slike/PrijavljivanjeKorisnika.png}
+\end{left}
+    \caption{Dijagram aktivnosti prijavljivanja korisnika}
+\label{fig:PrijavljivanjeKorisnika}
+\end{figure}
 
 \subsection{\bfseries Rad sa vozačima}
 
@@ -133,7 +141,7 @@
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Zainteresovana osoba je registrovana kao vozač.
+			\item Zainteresovana osoba jeste ili nije registrovana kao novi vozač.
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
@@ -154,6 +162,13 @@
 		\end{itemize}						
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=\textwidth]{Slike/RegistracijaVozaca.png}
+\end{left}
+    \caption{Dijagram aktivnosti registrovanja vozača}
+\label{fig:RegistracijaVozaca}
+\end{figure}
 
 \subsubsection{\bfseries Zahtev za automobil}
 
@@ -175,7 +190,7 @@
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Vozač dobija vozilo.
+			\item Vozač dobija vozilo ili čeka da se oslobodi sledeće.
 	    \end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
@@ -193,6 +208,13 @@
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{Slike/ZahtevAutomobila.png}
+\end{center}
+    \caption{Dijagram aktivnosti zahteva automobila}
+\label{fig:ZahtevAutomobila}
+\end{figure}
 
 \subsubsection{\bfseries Otpuštanje vozača}
 
@@ -227,6 +249,13 @@
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{Slike/OtpustanjeVozaca.png}
+\end{center}
+    \caption{Dijagram aktivnosti otpuštanja vozača}
+\label{fig:OtpustanjeVozaca}
+\end{figure}
 
 \subsubsection{\bfseries Vraćanje vozila}
 
@@ -250,11 +279,22 @@
 	    \end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Vozač daje ili dobija otkaz.
+		    \item Vozač dobija rok u kome mora da vrati vozilo.
 		    \item Vozač vraća vozilo.
 		\end{enumerate}
+	\item Alternativni tok:
+	    \begin{itemize}
+	        \item Ako vozač ne vrati vozilo u određenom roku, slučaj se prenosi sudu.
+	    \end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{Slike/VracanjeVozila.png}
+\end{center}
+    \caption{Dijagram aktivnosti vraćanja vozila.}
+\label{fig:VracanjeVozila}
+\end{figure}
 
 \subsubsection{\bfseries Prijavljivanje vozača}
 
@@ -293,12 +333,20 @@
         \end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=480,height=135]{Slike/PrijavljivanjeVozaca.png}
+\end{left}
+    \caption{Dijagram aktivnosti prijavljivanja vozača.}
+\label{fig:PrijavljivanjeVozaca}
+\end{figure}
+
 \subsection{\bfseries Vožnja}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{Slike/VoznjaUseCase.png}
 \end{center}
-    \caption{Dijagram slučaja upotrebe Vožnja.}
+    \caption{Dijagram slučaja upotrebe Vožnja}
 \label{fig:Vožnja}
 \end{figure}
 
@@ -323,13 +371,13 @@
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Vožnja je naručena.
+			\item Vožnja je naručena i započeta.
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
 		    \item Korisnik se prijavljuje na aplikaciju.
 		    \item Definiše putem  aplikacije  početnu lokaciju.
-		    \item Definiše lokaciju na koju želi da bude odvezen.
+		    \item Definiše lokaciju na koju želi da bude odvežen.
 		    \item Zahtev se šalje serveru.
 		    \item Server šalje zahtev vozačima.
 		    \item Vozači koji žele i u mogućnosti su da prime vožnju to i čine.
@@ -338,7 +386,7 @@
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-    		\item Korak 7 - ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju korisnik se obaveštava da trenutno ne postoji slobodno vozilo i ukoliko to korisnik želi, stavlja se na listu čekanja dok se ne oslobodi neko vozilo.
+    		\item Korak 7 - ne postoji slobodno vozilo koje može izvršiti transport korisnika servisa ili koje zadovoljava želje korisnika. U tom slučaju korisnik se obaveštava da trenutno ne postoji slobodno vozilo i ukoliko to korisnik želi ponavlja se korak 4.
 		\end{itemize}
 \end{itemize}
 
@@ -496,6 +544,7 @@
 	\item Preduslovi:
 		\begin{itemize}
 		    \item Postoje vozači kojima su potrebna vozila.
+		    \item Baza podataka o vozačima je operativna.
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
@@ -503,16 +552,23 @@
 	\end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Šef voznog parka na nedeljnom nivou proverava bazu podataka o vozačima da bi video koliko novih vozača nema svoje vozilo.
+		    \item Šef voznog parka pristupa bazi podataka o vozačima da bi video koliko novih vozača nema svoje vozilo.
 		    \item Šef voznog parka proverava da li ima 10 ili više vozača kojima je potrebno vozilo ili postoji barem jedan vozač koji čeka na vozilo više od dve nedelje.
 		    \item Šef voznog parka sastavlja porudžbinu.
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Korak 2 - ukoliko ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje, šef voznog parka čeka sledeću proveru baze o vozačima i kreće ponovo od koraka 2.
+		    \item Korak 2 - ukoliko ima manje od 10 vozača kojima je potrebno vozilo ili nijedan vozač ne čeka 2 nedelje, šef voznog parka vraća se na korak 1 posle određenog vremena ili u posebnim okolonostima .
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=\textwidth]{Slike/NarucivanjeVozila.png}
+\end{left}
+    \caption{Dijagram aktivnosti kreiranja narudžbine vozila}
+\label{fig:NaručivanjeVozila}
+\end{figure}
 
 \subsubsection{\bfseries Nabavka vozila}
 
@@ -536,20 +592,26 @@
 	\end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Šef voznog parka proverava da li postoji neki vozač koji je zaposlen i nema svoje vozilo.
-		    \item Šef voznog parka nakon provere sastavlja porudžbinu.
-		    \item Šef voznog parka stupa u kontakt sa dobavljačem.
-			\item Šef voznog parka isporučuje dobavljaču zahtevan broj vozila.
+		    \item Šef voznog parka sastavlja porudžbinu.
+		    \item Šef voznog parka pronalazi odgovarajućeg dovaljača.
+			\item Šef voznog parka šalje dobavljaču porudžbinu.
 			\item Dobavljač prihvata porudžbinu.
 			\item Dobavljač isporučuje šefu voznog parka zahtevan broj vozila.
 			\item Šef voznog parka ih smešta u vozni park do raspodele vozila vozačima.
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Korak 5 - u slučaju da dobavljač nije u stanju da ostvari porudžbinu, šef voznog parka odlaže nabavku u slučaju da su vozila potrebna za manje od 10 vozača ili pronalazi drugog dobavljača u slučaju da postoji 10 ili više vozača koji čekaju na vozila i nastavlja od koraka 5.
+		    \item Korak 4 - u slučaju da dobavljač nije u stanju da ostvari porudžbinu, šef voznog parka odlaže nabavku ili prelazi na korak 2 u zavisnoti od okolnosti.
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=\textwidth]{Slike/NabavkaVozila.png}
+\end{left}
+    \caption{Dijagram aktivnosti nabavke vozila}
+\label{fig:NabavkaVozila}
+\end{figure}
 
 \subsubsection{\bfseries Predaja vozila vozaču}
 
@@ -573,25 +635,35 @@
 	\end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Šef voznog parka obaveštava vozača da li ima vozilo.
-		    \item Vozač i šef voznog parka se dogovaraju kada će se sastati.
-		    \item Vozač i šef voznog parka se nalaze.
+		    \item Vozač dobija obaveštenje da li ima vozilo.
+		    \item Vozač dobija termin predaje vozila.
+		    \item Vozač dolazi do voznog parka da preuzme kola.
 			\item Vozač napismeno prihvata odgovornost za to vozilo.
 			\item Vozač preuzima vozilo.
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Korak 1 - ukoliko šef voznog parka nema vozilo za vozača on dodaje vozača na spisak vozača koji čekaju na nabavku vozila nakon čega se kreće od koraka 1.
+		    \item Korak 1 - ukoliko šef voznog parka nema vozilo za vozača on dodaje vozača na spisak vozača koji čekaju na nabavku vozila.
+		    \item Korak 3 - ukoliko vozač ne dođe u termin predaje vozila vraća se na korak 2.
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{left}
+\includegraphics[scale=1]{Slike/PredajaVozila.png}
+\end{left}
+    \caption{Dijagram aktivnosti predaje vozila}
+\label{fig:PredajaVozila}
+\end{figure}
 
-\subsubsection{\bfseries Upravljanje podacima o vozačima}
+\newpage
+
+\subsubsection{\bfseries Upravljanje podacima baze podataka}
 
 \begin{itemize}
 	\item Kratak opis:
 		\begin{itemize}
-			\item Šef voznog parka upravlja bazom podataka o vozilima pomoću operacija za čitanje i brisanje.
+			\item Šef voznog parka upravlja bazom podataka o korisnicima, vozačima i dobavljačima (u daljem tekstu jednostavno licima) pomoću CRUD operacija.
 		\end{itemize}
 	\item Učesnici:
 		\begin{itemize}
@@ -599,75 +671,37 @@
 		\end{itemize}
 	\item Preduslovi:
 		\begin{itemize}
-		    \item Baza podataka o vozačima je operativna.
+		    \item Baza podataka je operativna.
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Šef voznog parka je ažurirao bazu podataka o vozačima.
-	\end{itemize}
-	\item Glavni tok:
-		\begin{enumerate}
-		    \item Šef voznog parka otvara program za rad sa bazom podataka o dobavljačima.
-		    \item Šef voznog parka proverava da li ima barem 10 vozača koji nemaju svoja vozila.
-		    \item Šef voznog parka kreira porudžbinu.
-			\item Ažurira podatke u bazi o onim vozačima čija vozila će uključiti u porudžbinu.
-		\end{enumerate}
-	\item Alternativni tok:
-		\begin{itemize}
-		    \item Korak 1 - interfejs nije funkcionalan: Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
-			\item Korak 2 - ako nema 10 vozača ali postoji bar jedan vozač koji čeka na vozilo bar 2 nedelje: Šef voznog parka kreira porudžbinu za sve vozače koji čekaju na vozilo u tom momentu odnosno nastavlja od koraka 2.
-		\end{itemize}
-\end{itemize}
-
-
-\subsubsection{\bfseries Upravljanje podacima o dobavljačima}
-
-\begin{itemize}
-	\item Kratak opis:
-		\begin{itemize}
-			\item Šef voznog parka upravlja bazom podataka o dobavljačima pomoću CRUD operacija.
-		\end{itemize}
-	\item Učesnici:
-		\begin{itemize}
-		    \item Šef voznog parka
-		\end{itemize}
-	\item Preduslovi:
-		\begin{itemize}
-		    \item Baza podataka o dobavljačima je operativna.
-		\end{itemize}
-	\item Postuslovi:
-		\begin{itemize}
-			\item Šef voznog parka je ažurirao bazu podataka o dobavljačima.
+			\item Šef voznog parka je ažurirao bazu podataka.
 	    \end{itemize}
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Šef voznog parka otvara interfejs za bazu podataka o dobavljačima.
-		    \item Interfejs prikazuje trenutno stanje baze podataka.
-		    \item Šef voznog parka bira operaciju koju želi da izvrši.
+		    \item Šef voznog parka otvara interfejs za bazu podataka o licima.
 			\item Šef voznog parka izrvšava jednu od narednih operacija:
 			\begin{itemize}
                 \item Kreiranje:
                 \begin{itemize}
-                    \item Šef voznog parka unosi podatke o dobavljaču.
-                    \item Šef voznog parka popunjava formu sa podacima o novom dobavljaču.
-                    \item Šef voznog parka potvrđuje unos dobavljača u bazu podataka.
+                    \item Šef voznog parka unosi podatke o licu.
+                    \item Šef voznog parka potvrđuje unos lica u bazu podataka.
                 \end{itemize}
                 \item Čitanje:
                 \begin{itemize}
-                    \item Šef voznog parka pretražuje podatke o dobavljačima.
-                    \item Šef voznog parka bira da vidi detaljne informacije o određenom dobavljaču.
+                    \item Šef voznog parka pretražuje podatke o licima.
                 \end{itemize}
                 \item Ažuriranje:
                 \begin{itemize}
-                    \item Šef voznog parka bira dobavljača čije informacije želi da ažurira.
-                    \item Šef voznog parka prepravlja podatke o tom dobavljaču.
-                    \item Šef voznog parka potvrđuje ažuriranje informacija o dobavljaču u bazi podataka.
+                    \item Šef voznog parka bira lice čije informacije želi da ažurira.
+                    \item Šef voznog parka prepravlja podatke o tom licu.
+                    \item Šef voznog parka potvrđuje promene podataka.
                 \end{itemize}
                 \item Brisanje:
                 \begin{itemize}
-                    \item Šef voznog parka bira dobavljača kog želi da obriše.
-                    \item Šef voznog parka briše odabranog dobavljača.
-                    \item Šef voznog parka potvrđuje brisanje dobavljača iz baze podataka.
+                    \item Šef voznog parka bira lice kog želi da obriše.
+                    \item Šef voznog parka briše odabranog lica.
+                    \item Šef voznog parka potvrđuje brisanje lica.
                 \end{itemize}
             \end{itemize}
 		\item Sistem pamti izmene u bazi podataka.
@@ -677,3 +711,11 @@
 		    \item Korak 1 - interfejs nije funkcionalan: Šef voznog parka mora da proba opet kasnije da pristupi bazi podataka.
 		\end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+\begin{left}
+\includegraphics[scale=1.25]{Slike/UpravljanjePodacima.png}
+\end{left}
+    \caption{Dijagram aktivnosti upravljanja podacima baze podataka}
+\label{fig:UpravljanjePodacima}
+\end{figure}
