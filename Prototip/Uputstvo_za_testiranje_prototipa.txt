@@ -1,0 +1,8 @@
+Pošto se radi o aplikaciji namenjenoj za mobilne telefone, koristili smo sajt 'proto.io' za pravljenje korisničkog intefejsa i prototipa naše aplikacije.
+
+Ovaj prototip može da se testira i preko računara i preko Android mobilnih uređaja.
+
+Kada se uđe na link za testiranje preko računara, otvara se deo sajta kojim može da se prođe kroz našu aplikaciju.
+Ukoliko ga otvorite preko mobilnog uređaja - ponudiće vam se opcija da ga testirate preko pretraživača kao i kada uđete preko računara ali takođe i da skinete aplikaciju koja se zove baš 'proto.io' u kojoj možete da se krećete kroz aplikaciju kao da je imate na telefonu.
+
+Link za testiranje: https://pr.to/TTR4PU/
