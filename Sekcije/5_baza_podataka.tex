@@ -1,11 +1,11 @@
 \section{\bfseries Opis baze podataka}
-Baza podataka je projektovana tako da pokrije sve slučajeve upotrebe informacionog sistema aplikacije CarGo. Na slici \ref{fig:bazaPodataka} prikazana je šema baze.
+Baza podataka je projektovana tako da pokrije sve slučajeve upotrebe informacionog sistema aplikacije CarGo. Na slici \ref{fig:bazaPodataka} prikazana je shema baze.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{Slike/EERDijagramBazePodataka.png}
 \end{center}
-    \caption{Šema baze podataka}
+    \caption{Shema baze podataka}
 \label{fig:bazaPodataka}
 \end{figure}
 
@@ -20,30 +20,31 @@ Baza podataka je projektovana tako da pokrije sve slučajeve upotrebe informacio
 \begin{flushleft}
 \underline{Vozač}
 \end{flushleft}
-Svaki vozač ima email i šifru pomoću kojih pristupa svom nalogu. Vozač postaje aktivan kad se prijavi. Atributi:
+Svaki vozač ima korisničko ime i šifru pomoću kojih pristupa svom nalogu. Vozač postaje aktivan kad se prijavi. Atributi:
 \begin{itemize}
     \item Ime
     \item Prezime
-    \item korisnickoIme - korisničko ime vozača pomoću kojeg se prijavljuje
-    \item Ocena - ocena koju je dobio od korisnika u određenoj vožnji
     \item Email - email sa kojim se vozač registrovao
+    \item korisnickoIme - korisničko ime vozača pomoću kojeg se prijavljuje
     \item SifraToken - enkriptovana sifra vozača
     \item Aktivnost - trenutno stanje vozača, može biti aktivan ili neaktivan
+    \item Ocena - ocena koju je dobio od korisnika u određenoj vožnji
     \item IdVoznje - vožnje u kojima je vozač učestvovao
     \item BrojTelefona
+    \item BrojRacuna
 \end{itemize}
 
 \begin{flushleft}
 \underline{Korisnik}
 \end{flushleft}
-Kao i vozač, i korisnik ima svoj nalog. Korisnik se prijavljuje kad mu je potrebna vožnja. Za registraciju mora koristiti email. Atributi:
+Kao i vozač, i korisnik ima svoj nalog. Korisnik se prijavljuje kad mu je potrebna vožnja. Za registraciju mora koristiti email, dok mu je za prijavljivanje potrebno korisničko ime i šifra. Atributi:
 \begin{itemize}
-    \item Ime
-    \item Prezime
-    \item KorisnickoIme - korisničko ime pomoću kojeg se korisnik prijavljuje
     \item Email - email korisnika pomoću kojeg se registruje
+    \item KorisnickoIme - korisničko ime pomoću kojeg se korisnik prijavljuje
     \item SifraToken - enkriptovana šifra korisnika
     \item BrojKartice - broj kartice pomoću koje korisnik vrši plaćanje
+    \item Ime
+    \item Prezime
 \end{itemize}
 
 \begin{flushleft}
@@ -78,7 +79,7 @@ Izvedeni entiteti su:
 \begin{flushleft}
 \underline{Vozač sa svojim vozilom}
 \end{flushleft}
-Predstavlja specijalizaciju eniteta vozač. Sadrži informacije o vozačima koji imaju sopstveno vozilo. Atributi:
+Predstavlja specijalizaciju eniteta vozač. Sadrži vozače koji imaju sopstveno vozilo. Atributi:
 \begin{itemize}
     \item Vozac\_idVozaca - Id vozača koji ima sopstveno vozilo, strani ključ ka entitetu vozač
 \end{itemize}
@@ -86,7 +87,7 @@ Predstavlja specijalizaciju eniteta vozač. Sadrži informacije o vozačima koji
 \begin{flushleft}
 \underline{Vozač sa kompanijskim vozilom}
 \end{flushleft}
-Predstavlja specijalizaciju entiteta vozač. Sadrži informacije o vozačima koji nemaju sopstveno vozilo. Atributi:
+Predstavlja specijalizaciju entiteta vozač. Sadrži vozače koji nemaju sopstveno vozilo. Atributi:
 \begin{itemize}
     \item Vozac\_idVozaca - Id vozača koji nema sopstveno vozilo, strani ključ ka entitetu vozač
 \end{itemize}
@@ -94,13 +95,12 @@ Predstavlja specijalizaciju entiteta vozač. Sadrži informacije o vozačima koj
 \begin{flushleft}
 \underline{Kompanijsko vozilo}
 \end{flushleft}
-Predstavlja specijalizaciju entiteta vozilo. Sadrži informacije o vozilima koji su u vlasnistvu firme i izdaju se vozačima na korišćenje. Atributi:
+Predstavlja specijalizaciju entiteta vozilo. Sadrži informacije o vozilima koji su u vlasništvu firme i izdaju se vozačima na korišćenje. Atributi:
 \begin{itemize}
     \item Vozilo\_idVozila - strani ključ ka entitetu vozilo.
-    \item Porudzbina\_id\_porudzbine - redni broj porudžbine u kojoj je vozilo naručenoču.
-    \item Predaja\_vozila\_idisporuke - strani ključ na tabelu predaja vozila
-    \item Zauzetost - indikator da li je vozilo predato nekom vozaču ili ne
+    \item Porudzbina\_id\_porudzbine - redni broj porudžbine u kojoj je vozilo naručeno.
     \item Kilometraza
+    \item Zauzetost - indikator da li je vozilo predato nekom vozaču ili ne
     \item Servis
 \end{itemize}
 
@@ -120,9 +120,9 @@ Agregirani entiteti su:
 Sadrži informacije o svim vožnjama. Atributi:
 \begin{itemize}
     \item Vozac\_idVozaca - id vozača koji vozi korisnika ka željenoj lokaciji, strani ključ ka entitetu Vozač.
-    \item Vozac\_idKorisnika - id korisnika koji je traži prevoz, strani ključ ka entitetu Korisnik.
+    \item Vozac\_idKorisnika - id korisnika koji traži prevoz, strani ključ ka entitetu Korisnik.
     \item Cena - naknada koju korisnik treba da plati za izvršenu uslugu.
-    \item Pocetna\_lokacija - lokacija sa koje je korisnik zatrašio uslugu.
+    \item Pocetna\_lokacija - lokacija sa koje je korisnik zatražio uslugu.
     \item Krajnja\_lokacija - lokacija na koju korisnik želi da se preveze.
     \item Status - trenutni status vožnje.
 \end{itemize}
@@ -141,7 +141,8 @@ Sadrži informacije o platnim transakcijama za svaku vožnju. Atributi:
 \end{flushleft}
 Sadrži informacije o predatim vozilima vozačima koji nemaju svoja. Atributi:
 \begin{itemize}
-    \item Vozac\_sa\_kompanijskim\_vozilom\_Vozac\_idVozaca - strani ključ na entitet Vozač sa kompanijskim vozilom.
+    \item Kompanijsko\_vozilo\_Vozilo\_vozilom\_idVozila - strani ključ na tabelu Kompanijsko vozilo, id vozila koji je dodeljen vozaču.
+    \item Vozac\_sa\_kompanijskim\_vozilom\_Vozac\_idVozaca - strani ključ na entitet Vozač sa kompanijskim vozilom, id vozača kojem se dodeljuje vozilo.
     \item Sef\_voznog\_parka - ime osobe koja vrši dobavljanje vozila.
     \item Datum
 \end{itemize}
