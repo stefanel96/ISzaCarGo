@@ -51,7 +51,6 @@
         \end{itemize}
 \end{itemize}
 
-
 \begin{figure}[H]
 \begin{left}
 \includegraphics[width=480,height=125]{Slike/RegistracijaKorisnika.png}
@@ -59,7 +58,6 @@
     \caption{Dijagram aktivnosti registracije korisnika}
 \label{fig:RegistracijaKorisnika}
 \end{figure}
-
 
 \subsubsection{\bfseries Prijavljivanje korisnika}
 
@@ -390,6 +388,13 @@
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{Slike/NarucivanjeVozilaZaVoznju.png}
+\end{center}
+    \caption{Dijagram aktivnosti naručivanja vozila}
+\label{fig:NaručivanjeVozila}
+\end{figure}
 
 \subsubsection{\bfseries Prihvatanje vožnje}
 
@@ -412,12 +417,19 @@
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Korisnik šalje zahtev za prevoz.
 		    \item Zahtev preko servera stiže do vozača.
+		    \item Vozač dobija dodatne informacije o vožnji (udaljenost putnika, procena zarade, procena potrošnje goriva, itd.)
 		    \item Vozač prihvata ili odbija korisnički zahtev.
 		\end{enumerate}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.3]{Slike/PrihvatanjeVoznje.png}
+\end{center}
+    \caption{Dijagram aktivnosti prihvatanja vožnje}
+\label{fig:PrihvatanjeVožnje}
+\end{figure}
 
 \subsubsection{\bfseries Prevoz putnika}
 
@@ -439,16 +451,26 @@
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Korisnik je stigao na željenu lokaciju.
+			\item Vožnja je završena.
 		\end{itemize}	
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Korisnik čeka da vozač stigne na prosleđenu lokaciju.
 		    \item Vozač preuzima korisnika koji ga je unajmio.  
 		    \item Vozač prevozi korisnika do ciljne lokacije.
 		\end{enumerate}
+	\item Alternativni tok:
+	    \begin{itemize}
+	        \item Korak 3 - korisnik ne stiže do ciljne lokacije, na šta može da se žali pri oceni vozača.
+	    \end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.3]{Slike/PrevozPutnika.png}
+\end{center}
+    \caption{Dijagram aktivnosti prevoza putnika.}
+\label{fig:PrevozPutnika}
+\end{figure}
 
 \subsubsection{\bfseries Ocenjivanje vozača}
 
@@ -467,7 +489,7 @@
 		\end{itemize}
 	\item Postuslovi:
 		\begin{itemize}
-			\item Vozač je ocenjen ukoliko je korisnik želeo da ga oceni.
+			\item Prosleđeni su podaci o vožnji i mogućoj oceni.
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
@@ -477,11 +499,18 @@
 		\end{enumerate}
 	\item Alternativni tok:
 		\begin{itemize}
-		    \item Korak 1/2 - ukoliko je korisnik izuzetno nezadovoljan svojom vožnjom ili nije ni stigao na svoje odredište može da prijavi žalbu CarGo korisničkom servisu putem mejla ili CarGo web stranice.
+		    \item Korak 1/2 - ukoliko je korisnik izuzetno nezadovoljan svojom vožnjom ili nije ni stigao na svoje odredište podnosi žalbu CarGo korisničkom servisu putem mejla ili CarGo web stranice.
     		\item Korak 2 - ukoliko je korisnik odabrao opciju da ne želi da oceni vozača korak 3 se preskače.
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.1]{Slike/OcenjivanjeVozaca.png}
+\end{center}
+    \caption{Dijagram aktivnosti ocenjivanja vozača.}
+\label{fig:OcenjivanjeVozača}
+\end{figure}
 
 \subsubsection{\bfseries Naplata vožnje}
 
@@ -506,7 +535,6 @@
 		\end{itemize}		
 	\item Glavni tok:
 		\begin{enumerate}
-		    \item Korisnik je stigao do željene lokacije.
 		    \item Korisnik vrši uplatu novca (svota je definisana prilikom naručivanja vožnje) preko aplikacije.
 		    \item Banka vrši prosleđivanje uplaćenog novca vozaču.
 		    \item Vozaču leže uplata.
@@ -517,7 +545,23 @@
 		\end{itemize}
 \end{itemize}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.1]{Slike/NaplataVoznje.png}
+\end{center}
+    \caption{Dijagram aktivnosti naplate vožnje.}
+\label{fig:NaplataVožnje}
+\end{figure}
+
 \newpage
+
+\begin{figure}[H]
+\begin{left}
+\includegraphics[width=490pt, height = 600pt]{Slike/VoznjaSekvenca.png}
+\end{left}
+    \caption{Dijagram sekvence primera slučaja upotrebe usluge}
+\label{fig:VožnjaSekvenca}
+\end{figure}
 
 \subsection{\bfseries Nabavka vozila}
 
@@ -637,7 +681,7 @@
 		\begin{enumerate}
 		    \item Vozač dobija obaveštenje da li ima vozilo.
 		    \item Vozač dobija termin predaje vozila.
-		    \item Vozač dolazi do voznog parka da preuzme kola.
+		    \item Vozač dolazi do voznog parka da preuzme kola u zakazanom terminu.
 			\item Vozač napismeno prihvata odgovornost za to vozilo.
 			\item Vozač preuzima vozilo.
 		\end{enumerate}
